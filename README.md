@@ -1,3 +1,13 @@
+<!--
+Copyright (c) 2025 Huawei Technologies Co., Ltd.
+This program is free software, you can redistribute it and/or modify it under the terms and conditions of
+CANN Open Software License Agreement Version 2.0 (the "License").
+Please refer to the License for details. You may not use this file except in compliance with the License.
+THIS SOFTWARE IS PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+INCLUDING BUT NOT LIMITED TO NON-INFRINGEMENT, MERCHANTABILITY, OR FITNESS FOR A PARTICULAR PURPOSE.
+See LICENSE in the root of the software repository for the full text of the License.
+-->
+
 # TRIP - 高速事故工单智能研判
 
 TRIP（Traffic Incident Processing）是一款面向高速公路运营管理场景的智能研判应用。用户可上传事故工单图片/PDF 或输入文本，系统通过多智能体编排依次完成 **事件理解 → 知识调取 → 风险研判 → 方案生成 → 决策下发**，输出结构化事故要素、风险等级、按部门分发的管控措施及可下载的 JSON 结果。
@@ -168,6 +178,10 @@ TRIP/
 ├── CONTRIBUTING.md             # 贡献指南
 ├── SECURITY.md                 # 安全声明
 ├── CHANGELOG.md                # 版本变更记录
+├── OAT.xml                     # 开源合规扫描配置
+├── .pre-commit-config.yaml     # 提交前检查（含 OAT）
+├── scripts/
+│   └── oat_check.sh            # OAT pre-commit 检查脚本
 ├── .streamlit/
 │   ├── secrets.toml.example    # 密钥配置示例
 │   └── secrets.toml            # 真实密钥
