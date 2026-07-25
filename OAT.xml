@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-Copyright (c) 2025 Huawei Technologies Co., Ltd.
+Copyright (c) 2025 Southeast University
 This program is free software, you can redistribute it and/or modify it under the terms and conditions of
 CANN Open Software License Agreement Version 2.0 (the "License").
 Please refer to the License for details. You may not use this file except in compliance with the License.
@@ -15,7 +15,7 @@ See LICENSE in the root of the software repository for the full text of the Lice
         <policylist>
             <policy name="projectPolicy" desc="">
                 <policyitem type="license" name="CANN-2.0" path=".*" desc=""/>
-                <policyitem type="copyright" name="Huawei Technologies Co., Ltd." path=".*" rule="may" group="defaultGroup" filefilter="copyrightPolicyFilter" desc=""/>
+                <policyitem type="copyright" name="Southeast University" path=".*" rule="may" group="defaultGroup" filefilter="copyrightPolicyFilter" desc=""/>
             </policy>
         </policylist>
         <filefilterlist>

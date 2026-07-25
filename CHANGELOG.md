@@ -1,5 +1,5 @@
 <!--
-Copyright (c) 2025 Huawei Technologies Co., Ltd.
+Copyright (c) 2025 Southeast University
 This program is free software, you can redistribute it and/or modify it under the terms and conditions of
 CANN Open Software License Agreement Version 2.0 (the "License").
 Please refer to the License for details. You may not use this file except in compliance with the License.
@@ -20,7 +20,7 @@ See LICENSE in the root of the software repository for the full text of the Lice
 
 - 补充开源合规文档：`LICENSE`、`CONTRIBUTING.md`、`SECURITY.md`、`CHANGELOG.md`。
 - 重写 `README.md`，增加概述、版本配套、环境准备、源码下载、学习教程、目录结构、相关链接与问题反馈入口。
-- 为源码与文档补充 Huawei/CANN 2.0 风格 Copyright 头。
+- 为源码与文档补充 Southeast University Copyright 头（CANN 2.0 许可证声明格式）。
 - 新增 `OAT.xml` 开源合规扫描配置，以及 `.pre-commit-config.yaml` + `scripts/oat_check.sh`。
 
 ---
