@@ -102,8 +102,7 @@ TRIP（Traffic Incident Processing）是一款面向高速公路运营管理场�
 ## 源码下载
 
 ```bash
-git clone https://github.com/Zhenz2020/TRIP.git
-cd TRIP
+https://gitcode.com/cann/its-trip
 ```
 
 ---
