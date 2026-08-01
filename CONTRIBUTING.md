@@ -16,112 +16,65 @@ See LICENSE in the root of the software repository for the full text of the Lice
 
 ## 贡献流程
 
-1. **Fork 仓库**：点击 GitHub 页面右上角的 **Fork**，将仓库复制到你的账号下。
+1. **Fork 仓库**：在 [GitCode 仓库页](https://gitcode.com/cann/its-trip) 点击 **Fork**，将仓库复制到你的账号下。
 2. **克隆仓库**：
-
    ```bash
-   git clone https://github.com/<your-username>/TRIP.git
-   cd TRIP
+   git clone https://gitcode.com/<your-username>/its-trip.git
+   cd its-trip
    ```
-3. **创建分支**：从 `main` 分支切出功能分支，命名建议体现修改意图：
-
+3. **创建分支**：从 `master` 分支切出功能分支，命名建议体现修改意图：
    ```bash
    git checkout -b feature/add-vision-model-switch
    ```
 4. **本地开发与验证**：
-
-   * 安装依赖：`pip install -r requirements.txt`
-   * 复制并配置密钥：`Copy-Item .streamlit\secrets.toml.example .streamlit\secrets.toml`
-   * 启动应用：`streamlit run app.py`
-   * 修改后确保核心流程可正常执行（上传示例 → 开始研判 → 查看结果 → 下载 JSON）。
+   - 安装依赖：`pip install -r requirements.txt`
+   - 复制并配置密钥：`Copy-Item .streamlit\secrets.toml.example .streamlit\secrets.toml`
+   - 启动应用：`streamlit run app.py`
+   - 修改后确保核心流程可正常执行（上传示例 → 开始研判 → 查看结果 → 下载 JSON）。
 5. **保持提交信息清晰**：使用中文或英文简要说明本次修改，例如：
-
    ```text
    feat: 支持多文件上传时合并 OCR 结果
    fix: 修复 RiskAssessment 输出解析失败时未记录 trace 的问题
    docs: 更新 README 中的模型版本说明
    ```
 6. **推送并提交 Pull Request**：
-
    ```bash
    git push origin feature/add-vision-model-switch
    ```
-
-   然后在 GitHub 发起 Pull Request，关联相关 Issue（如有）。
+   然后在 GitCode 向 `cann/its-trip` 发起 Pull Request，关联相关 Issue（如有）。
 7. **代码审查**：维护者将进行审查，必要时请配合修改。
+8. **许可证与文件头**：新增或修改可注释源文件时，应保留 / 补充仓库统一的 CANN-2.0 Copyright 文件头（版权主体为 Southeast University）；`json` / `png` / `toml` 等无法添加注释的文件除外。合规检查见根目录 `OAT.xml` 与 `scripts/oat_check.sh`。
 
 ---
 
 ## Issue 创建规范
 
-TRIP 的 Issue 创建与管理流程遵循 CANN community 仓中的统一规范。提交 Issue 前，请先阅读 community 仓中的 Issue 操作指南，并按照社区要求填写问题描述、复现步骤、环境信息和相关日志。
-
-Issue 操作指南请参考：
-
-```text
-https://gitcode.com/cann/community/blob/master/contributor/issue-operation.md
-```
-
-在遵循社区统一 Issue 流程的基础上，TRIP 项目建议根据问题类型补充以下项目信息。
+在创建 Issue 前，请先搜索是否已有相似问题。
 
 ### Bug 报告模板
 
-提交 Bug Issue 时，建议结合 TRIP 项目特点提供以下信息：
-
-* **标题**：以 `[Bug]` 开头，简要描述问题；
-* **环境信息**：
-
-  * 操作系统；
-  * Python 版本；
-  * Streamlit 版本；
-  * 使用的模型名称；
-* **复现步骤**：按 1、2、3 列出；
-* **预期结果** 与 **实际结果**；
-* **关键日志/报错信息**：注意隐去 API key、Token、密码等敏感信息；
-* **输入样例**：可脱敏后的图片/文本，或说明使用了哪个默认示例；
-* **问题出现频率**：例如必现、偶现、仅在特定文件或模型下出现；
-* **是否存在临时规避方法**：如有请说明。
-
-推荐标题格式：
-
-```text
-[Bug] <问题简述>
-```
-
-示例：
-
-```text
-[Bug] 上传多文件后 OCR 结果未正确合并
-```
+- **标题**：以 `[Bug]` 开头，简要描述问题
+- **环境信息**：
+  - 操作系统
+  - Python 版本
+  - Streamlit 版本
+  - 使用的模型名称
+- **复现步骤**：按 1、2、3 列出
+- **预期结果** 与 **实际结果**
+- **关键日志/报错信息**：注意隐去 API key 等敏感信息
+- **输入样例**：可脱敏后的图片/文本，或说明使用了哪个默认示例
 
 ### Feature 请求模板
 
-提交功能建议 Issue 时，建议说明：
-
-* **标题**：以 `[Feature]` 开头；
-* **背景与动机**：描述使用场景；
-* **期望功能**：清晰说明希望新增的能力；
-* **对现有流程的影响**：例如上传、OCR、研判、JSON 输出、下载或配置项是否需要调整；
-* **可能的实现方案**（可选）；
-* **是否愿意参与开发或测试**（可选）。
-
-推荐标题格式：
-
-```text
-[Feature] <功能简述>
-```
+- **标题**：以 `[Feature]` 开头
+- **背景与动机**：描述使用场景
+- **期望功能**：清晰说明希望新增的能力
+- **可能的实现方案**（可选）
 
 ### 文档改进
 
-文档相关 Issue 可使用以下标题格式：
-
-```text
-[Docs] <文档问题简述>
-```
-
-提交文档问题时，请说明文档中错误、缺失或不清晰之处，并尽量给出建议修改内容。
-
-请勿在公开 Issue 中提交密码、Token、私钥、内部地址、个人隐私数据、未脱敏事故材料或其他敏感信息。安全漏洞请按照 `SECURITY.md` 或 CANN community 仓中的安全问题处理流程报告。
+- **标题**：以 `[Docs]` 开头
+- 说明文档中错误、缺失或不清晰之处，并建议修改内容
 
 ---
 
@@ -129,23 +82,23 @@ https://gitcode.com/cann/community/blob/master/contributor/issue-operation.md
 
 ### 提交前检查清单
 
-* [ ] 代码符合项目现有风格（使用 `from __future__ import annotations`，类型提示等）
-* [ ] 新增依赖已写入 `requirements.txt` 并说明原因
-* [ ] 新增配置项已在 `.streamlit/secrets.toml.example` 中给出示例
-* [ ] 已通过本地运行验证：`streamlit run app.py` 可正常完成一次研判
-* [ ] 敏感信息（API key、token、密码）未写入代码或提交记录
-* [ ] 提交信息符合规范
+- [ ] 代码符合项目现有风格（使用 `from __future__ import annotations`，类型提示等）
+- [ ] 新增依赖已写入 `requirements.txt` 并说明原因
+- [ ] 新增配置项已在 `.streamlit/secrets.toml.example` 中给出示例
+- [ ] 已通过本地运行验证：`streamlit run app.py` 可正常完成一次研判
+- [ ] 敏感信息（API key、token、密码）未写入代码或提交记录
+- [ ] 提交信息符合规范
 
 ### PR 描述要求
 
-* 说明本次修改的目的与范围
-* 关联相关 Issue：`Fixes #123` 或 `Relates to #456`
-* 如为功能变更，补充验证方式或截图
+- 说明本次修改的目的与范围
+- 关联相关 Issue：`Fixes #123` 或 `Relates to #456`
+- 如为功能变更，补充验证方式或截图
 
 ### 审查与合并
 
-* 至少一位维护者 review 通过后方可合并
-* 合并前请确保无敏感信息泄露、无破坏性变更未在 CHANGELOG 中记录
+- 至少一位维护者 review 通过后方可合并
+- 合并前请确保无敏感信息泄露、无破坏性变更未在 CHANGELOG 中记录
 
 ---
 
@@ -155,43 +108,44 @@ https://gitcode.com/cann/community/blob/master/contributor/issue-operation.md
 
 ### 1. 代码交付件
 
-| 交付件        | 必填 | 说明                                             |
-| ---------- | -- | ---------------------------------------------- |
-| Python 源代码 | 是  | 位于 `trip_ai/` 或 `app.py`，遵循现有模块划分              |
-| 类型注解       | 是  | 新函数/类需包含类型提示                                   |
-| 错误处理       | 是  | 对 LLM/OCR 等外部调用增加异常捕获与 trace 记录                |
-| 配置示例       | 是  | 新增配置项必须在 `.streamlit/secrets.toml.example` 中示例 |
-| 依赖声明       | 条件 | 新增第三方包需写入 `requirements.txt`                   |
+| 交付件 | 必填 | 说明 |
+| --- | --- | --- |
+| Python 源代码 | 是 | 位于 `trip_ai/` 或 `app.py`，遵循现有模块划分 |
+| 类型注解 | 是 | 新函数/类需包含类型提示 |
+| 错误处理 | 是 | 对 LLM/OCR 等外部调用增加异常捕获与 trace 记录 |
+| 配置示例 | 是 | 新增配置项必须在 `.streamlit/secrets.toml.example` 中示例 |
+| 依赖声明 | 条件 | 新增第三方包需写入 `requirements.txt` |
 
 ### 2. Skill 交付件（新增/修改智能体行为时）
 
-| 交付件            | 必填 | 说明                                                 |
-| -------------- | -- | -------------------------------------------------- |
-| Skill Markdown | 是  | 位于 `skills/<agent>.<name>.md`，包含 YAML front matter |
-| 元数据            | 是  | `name`、`agent`、`description`、`inputs`、`outputs`    |
-| 资源声明           | 是  | `resources` 中列明使用的工具/模型/数据                         |
-| Action Guide   | 是  | 清晰描述智能体执行步骤与输出约束                                   |
-| 默认 Skill 更新    | 条件 | 若修改默认行为，需同步更新 `*.default.md`                       |
+| 交付件 | 必填 | 说明 |
+| --- | --- | --- |
+| Skill Markdown | 是 | 位于 `skills/<agent>.<name>.md`，包含 YAML front matter |
+| 元数据 | 是 | `name`、`agent`、`description`、`inputs`、`outputs` |
+| 资源声明 | 是 | `resources` 中列明使用的工具/模型/数据 |
+| Action Guide | 是 | 清晰描述智能体执行步骤与输出约束 |
+| 默认 Skill 更新 | 条件 | 若修改默认行为，需同步更新 `*.default.md` |
 
 ### 3. 文档交付件
 
-| 交付件          | 必填 | 说明                            |
-| ------------ | -- | ----------------------------- |
-| README 更新    | 条件 | 若涉及接口、数据类型、启动方式变更需同步更新        |
-| CHANGELOG 更新 | 是  | 记录版本号、变更内容、修复问题               |
-| 安全声明更新       | 条件 | 若新增外部网络调用或文件操作需更新 SECURITY.md |
+| 交付件 | 必填 | 说明 |
+| --- | --- | --- |
+| README 更新 | 条件 | 若涉及接口、数据类型、启动方式变更需同步更新 |
+| CHANGELOG 更新 | 是 | 记录版本号、变更内容、修复问题 |
+| 安全声明更新 | 条件 | 若新增外部网络调用或文件操作需更新 SECURITY.md |
 
 ### 4. 验证交付件
 
-| 交付件    | 必填 | 说明                              |
-| ------ | -- | ------------------------------- |
-| 本地运行验证 | 是  | 至少完成一次端到端研判并生成 JSON 结果          |
-| 敏感信息检查 | 是  | 确认未提交 `secrets.toml`、日志中的 key 等 |
+| 交付件 | 必填 | 说明 |
+| --- | --- | --- |
+| 本地运行验证 | 是 | 至少完成一次端到端研判并生成 JSON 结果 |
+| 敏感信息检查 | 是 | 确认未提交 `secrets.toml`、日志中的 key 等 |
 
 ---
 
 ## 行为准则
 
-* 保持友善与尊重，接受建设性反馈
-* 聚焦问题本身，避免人身攻击
-* 尊重不同观点，通过讨论达成共识
+- 保持友善与尊重，接受建设性反馈
+- 聚焦问题本身，避免人身攻击
+- 尊重不同观点，通过讨论达成共识
+

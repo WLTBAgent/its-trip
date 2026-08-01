@@ -23,6 +23,13 @@ See LICENSE in the root of the software repository for the full text of the Lice
 - 为源码与文档补充 Southeast University Copyright 头（CANN 2.0 许可证声明格式）。
 - 新增 `OAT.xml` 开源合规扫描配置，以及 `.pre-commit-config.yaml` + `scripts/oat_check.sh`。
 
+### Changed
+
+- 根目录 `LICENSE` 由 Apache License 2.0 切换为 CANN Open Software License Agreement Version 2.0，与源文件头及 `OAT.xml` 对齐。
+- 按 ops-nn / 开源 checklist 完善 `OAT.xml` 过滤与 `licensematcher` 配置。
+- 修正 `README.md` 源码下载地址为 `https://gitcode.com/cann/its-trip.git`，并补充所属 SIG、Issue 反馈入口。
+- 同步更新 `CONTRIBUTING.md` 中的 Fork / 克隆 / PR 流程为 GitCode。
+
 ---
 
 ## [0.1.0] - 2026-07-21

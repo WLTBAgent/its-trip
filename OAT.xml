@@ -1,70 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-Copyright (c) 2025 Southeast University
-This program is free software, you can redistribute it and/or modify it under the terms and conditions of
-CANN Open Software License Agreement Version 2.0 (the "License").
-Please refer to the License for details. You may not use this file except in compliance with the License.
-THIS SOFTWARE IS PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED,
-INCLUDING BUT NOT LIMITED TO NON-INFRINGEMENT, MERCHANTABILITY, OR FITNESS FOR A PARTICULAR PURPOSE.
-See LICENSE in the root of the software repository for the full text of the License.
+<!--    Copyright (c) 2025 Southeast University
+        This program is free software, you can redistribute it and/or modify it under the terms and conditions of
+        CANN Open Software License Agreement Version 2.0 (the "License").
+        Please refer to the License for details. You may not use this file except in compliance with the License.
+        THIS SOFTWARE IS PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+        INCLUDING BUT NOT LIMITED TO NON-INFRINGEMENT, MERCHANTABILITY, OR FITNESS FOR A PARTICULAR PURPOSE.
+        See LICENSE in the root of the software repository for the full text of the License.
 -->
 
 <configuration>
     <oatconfig>
         <licensefile></licensefile>
         <policylist>
-            <policy name="projectPolicy" desc="">
-                <policyitem type="license" name="CANN-2.0" path=".*" desc=""/>
-                <policyitem type="copyright" name="Southeast University" path=".*" rule="may" group="defaultGroup" filefilter="copyrightPolicyFilter" desc=""/>
+            <policy name="projectPolicy" desc="its-trip CANN-2.0 project policy">
+                <policyitem type="license" name="CANN-2.0" path=".*" desc="Source files should declare CANN Open Software License Agreement Version 2.0"/>
+                <policyitem type="copyright" name="Southeast University" path=".*" rule="may" group="defaultGroup" filefilter="copyrightPolicyFilter" desc="Source files should contain Copyright header"/>
+                <policyitem type="filename" name="LICENSE" path="projectroot" desc="Root LICENSE file is required"/>
+                <policyitem type="filename" name="README.md" path="projectroot" desc="Root README.md is required"/>
+                <policyitem type="filetype" name="binary" path=".*" filefilter="binaryFileTypePolicyFilter" desc="Binary files should be reviewed or filtered"/>
             </policy>
         </policylist>
+
         <filefilterlist>
-            <filefilter name="defaultFilter" desc="Files not to check">
-            </filefilter>
-            <filefilter name="defaultPolicyFilter" desc="Filters for compatibility, license header policies">
-                <filteritem type="filename" name="*.yaml" desc="YAML config files"/>
-                <filteritem type="filename" name="*.yml" desc="YAML config files"/>
-                <filteritem type="filename" name="*.csv" desc="CSV files"/>
-                <filteritem type="filename" name="*.json" desc="JSON config files"/>
-                <filteritem type="filename" name="*.png" desc="Binary image files"/>
-                <filteritem type="filename" name="*.jpg" desc="Binary image files"/>
-                <filteritem type="filename" name="*.jpeg" desc="Binary image files"/>
-                <filteritem type="filename" name="LICENSE" desc="Root license file"/>
+            <filefilter name="defaultFilter" desc="Files not to check by default">
+                <filteritem type="filename" name="*.json|*.csv|*.log|*.png|*.jpg|*.jpeg|*.gif|*.svg|*.iml|*.pyc|*.toml" desc="Data, logs, images, secrets examples and generated files"/>
+                <filteritem type="filepath" name=".git/.*" desc="Git metadata"/>
+                <filteritem type="filepath" name=".venv/.*" desc="Python virtualenv"/>
+                <filteritem type="filepath" name="__pycache__/.*" desc="Python cache"/>
+                <filteritem type="filepath" name="runs/.*" desc="Local run history"/>
                 <filteritem type="filepath" name=".history/.*" desc="Local editor history backups"/>
                 <filteritem type="filepath" name="oat_reports/.*" desc="OAT scan reports"/>
+                <filteritem type="filepath" name=".streamlit/.*" desc="Streamlit secrets and local config"/>
+                <filteritem type="filepath" name=".devcontainer/.*" desc="Devcontainer JSON config"/>
             </filefilter>
+
+            <filefilter name="defaultPolicyFilter" desc="Filters for compatibility and license header policies">
+                <filteritem type="filename" name="LICENSE|*.json|*.csv|*.log|*.png|*.jpg|*.jpeg|*.gif|*.svg|*.pyc|*.yaml|*.yml|*.toml" desc="Cannot or should not carry license comment headers"/>
+                <filteritem type="filepath" name=".history/.*" desc="Local editor history backups"/>
+                <filteritem type="filepath" name="oat_reports/.*" desc="OAT scan reports"/>
+                <filteritem type="filepath" name="runs/.*" desc="Local run history"/>
+                <filteritem type="filepath" name=".streamlit/.*" desc="Streamlit secrets and local config"/>
+                <filteritem type="filepath" name=".devcontainer/.*" desc="Devcontainer JSON config"/>
+            </filefilter>
+
             <filefilter name="copyrightPolicyFilter" desc="Filters for copyright header policies">
-                <filteritem type="filename" name="*.csv" desc="CSV files"/>
-                <filteritem type="filename" name="*.json" desc="JSON config files"/>
-                <filteritem type="filename" name="*.png" desc="Binary image files"/>
-                <filteritem type="filename" name="*.jpg" desc="Binary image files"/>
-                <filteritem type="filename" name="*.jpeg" desc="Binary image files"/>
-                <filteritem type="filename" name="LICENSE" desc="Root license file"/>
+                <filteritem type="filename" name="LICENSE|*.json|*.csv|*.log|*.png|*.jpg|*.jpeg|*.gif|*.svg|*.pyc|*.toml" desc="Cannot or should not carry copyright comment headers"/>
                 <filteritem type="filepath" name=".history/.*" desc="Local editor history backups"/>
                 <filteritem type="filepath" name="oat_reports/.*" desc="OAT scan reports"/>
+                <filteritem type="filepath" name="runs/.*" desc="Local run history"/>
+                <filteritem type="filepath" name=".streamlit/.*" desc="Streamlit secrets and local config"/>
+                <filteritem type="filepath" name=".devcontainer/.*" desc="Devcontainer JSON config"/>
             </filefilter>
+
             <filefilter name="licenseFileNamePolicyFilter" desc="Filters for LICENSE file policies">
             </filefilter>
             <filefilter name="readmeFileNamePolicyFilter" desc="Filters for README file policies">
             </filefilter>
             <filefilter name="readmeOpenSourcefileNamePolicyFilter" desc="Filters for README.OpenSource file policies">
             </filefilter>
-            <filefilter name="binaryFileTypePolicyFilter" desc="Filters for binary file policies">
-                <filteritem type="filename" name="*.png" desc="Binary image files"/>
-                <filteritem type="filename" name="*.jpg" desc="Binary image files"/>
-                <filteritem type="filename" name="*.jpeg" desc="Binary image files"/>
+            <filefilter name="binaryFileTypePolicyFilter" desc="Allowed or reviewed binary-like files">
+                <filteritem type="filename" name="*.png|*.jpg|*.jpeg" desc="Sample ticket / incident images"/>
             </filefilter>
         </filefilterlist>
+
         <licensematcherlist>
             <licensematcher name="cann License" desc="If the scanning result is InvalidLicense, you can define matching rules here. Note that quotation marks must be escaped.">
                 <licensetext name="
                     This program is free software, you can redistribute it and/or modify it under the terms and conditions of
-                    CANN Open Software License Agreement Version 2.0 (the &quot;License&quot;).
+                    CANN Open Software License Agreement Version 2.0 (the "License").
                     Please refer to the License for details. You may not use this file except in compliance with the License.
-                    THIS SOFTWARE IS PROVIDED ON AN &quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+                    THIS SOFTWARE IS PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED,
                     INCLUDING BUT NOT LIMITED TO NON-INFRINGEMENT, MERCHANTABILITY, OR FITNESS FOR A PARTICULAR PURPOSE.
                     See LICENSE in the root of the software repository for the full text of the License.
-                 " desc=""/>
+				 " desc=""/>
             </licensematcher>
         </licensematcherlist>
     </oatconfig>

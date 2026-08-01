@@ -7,8 +7,11 @@
 # INCLUDING BUT NOT LIMITED TO NON-INFRINGEMENT, MERCHANTABILITY, OR FITNESS FOR A PARTICULAR PURPOSE.
 # See LICENSE in the root of the software repository for the full text of the License.
 # ---------------------------------------------------------------------------------------------------------
+# Reference: https://gitcode.com/cann/ops-nn/blob/master/.pre-commit-config.yaml
+# Adapted for this Python Streamlit application repo (CANN-2.0 LICENSE).
+
 minimum_pre_commit_version: 4.0.0
-exclude: ^LICENSES/|\.(html|csv|svg|png|jpg|jpeg|json)$|\.history/
+exclude: ^LICENSE$|^LICENSES/|\.(html|csv|svg|png|jpg|jpeg|json)$|\.history/|oat_reports/
 
 default_stages: [pre-commit]
 ci:

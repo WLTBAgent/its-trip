@@ -8,9 +8,9 @@ INCLUDING BUT NOT LIMITED TO NON-INFRINGEMENT, MERCHANTABILITY, OR FITNESS FOR A
 See LICENSE in the root of the software repository for the full text of the License.
 -->
 
-# TRIP - 高速事故工单智能研判
+# its-trip - 高速事故工单智能研判
 
-TRIP（Traffic Incident Processing）是一款面向高速公路运营管理场景的智能研判应用。用户可上传事故工单图片/PDF 或输入文本，系统通过多智能体编排依次完成 **事件理解 → 知识调取 → 风险研判 → 方案生成 → 决策下发**，输出结构化事故要素、风险等级、按部门分发的管控措施及可下载的 JSON 结果。
+its-trip（TRIP，Traffic Incident Processing）是 [CANN 社区 Intelligent Transportation System SIG](https://gitcode.com/cann/community/blob/master/CANN/sigs/intelligent-transportation-system/README.md) 旗下的高速事故工单智能研判示例仓。用户可上传事故工单图片/PDF 或输入文本，系统通过多智能体编排依次完成 **事件理解 → 知识调取 → 风险研判 → 方案生成 → 决策下发**，输出结构化事故要素、风险等级、按部门分发的管控措施及可下载的 JSON 结果。
 
 ---
 
@@ -18,12 +18,15 @@ TRIP（Traffic Incident Processing）是一款面向高速公路运营管理场�
 
 - [概述](#概述)
 - [版本配套](#版本配套)
+- [硬件和版本要求](#硬件和版本要求)
 - [环境准备](#环境准备)
 - [源码下载](#源码下载)
 - [快速开始](#快速开始)
 - [学习教程](#学习教程)
 - [目录结构](#目录结构)
 - [相关链接](#相关链接)
+- [许可证](#许可证)
+- [所属 SIG](#所属-sig)
 - [问题反馈](#问题反馈)
 
 ---
@@ -73,7 +76,7 @@ TRIP（Traffic Incident Processing）是一款面向高速公路运营管理场�
 
 ---
 
-##硬件和版本要求
+## 硬件和版本要求
 
 - **产品型号**：香橙派 AI Station（Orange Pi AI Station）
 - **AI 处理器**：昇腾 310P（Ascend 310P），10 个 AI Core，主频 1.08GHz，算力 176 TOPS
@@ -102,8 +105,11 @@ TRIP（Traffic Incident Processing）是一款面向高速公路运营管理场�
 ## 源码下载
 
 ```bash
-https://gitcode.com/cann/its-trip
+git clone https://gitcode.com/cann/its-trip.git
+cd its-trip
 ```
+
+仓库地址：[https://gitcode.com/cann/its-trip](https://gitcode.com/cann/its-trip)
 
 ---
 
@@ -169,21 +175,21 @@ streamlit run app.py
 ## 目录结构
 
 ```text
-TRIP/
+its-trip/
 ├── app.py                      # Streamlit 应用入口
 ├── requirements.txt            # Python 依赖
-├── LICENSE                     # Apache 2.0 许可证
+├── LICENSE                     # CANN Open Software License Agreement Version 2.0
 ├── README.md                   # 本文件
 ├── CONTRIBUTING.md             # 贡献指南
 ├── SECURITY.md                 # 安全声明
 ├── CHANGELOG.md                # 版本变更记录
-├── OAT.xml                     # 开源合规扫描配置
+├── OAT.xml                     # 开源合规扫描配置（CANN-2.0）
 ├── .pre-commit-config.yaml     # 提交前检查（含 OAT）
 ├── scripts/
 │   └── oat_check.sh            # OAT pre-commit 检查脚本
 ├── .streamlit/
 │   ├── secrets.toml.example    # 密钥配置示例
-│   └── secrets.toml            # 真实密钥
+│   └── secrets.toml            # 真实密钥（勿提交）
 ├── trip_ai/                    # 核心 Python 包
 │   ├── config.py               # 配置读取（secrets/env）
 │   ├── schemas.py              # Pydantic 数据模型
@@ -223,10 +229,28 @@ TRIP/
 - [安全声明](SECURITY.md)
 - [变更记录](CHANGELOG.md)
 - [skills 说明](skills/README.md)
+- [Intelligent Transportation System SIG](https://gitcode.com/cann/community/blob/master/CANN/sigs/intelligent-transportation-system/README.md)
+
+---
+
+## 许可证
+
+本项目基于 [CANN Open Software License Agreement Version 2.0](LICENSE) 开源，版权主体为 Southeast University（东南大学）。
+
+---
+
+## 所属 SIG
+
+本仓库归属 CANN 社区 **Intelligent Transportation System SIG（智能交通系统兴趣小组）**：
+
+- SIG 主页：[intelligent-transportation-system/README.md](https://gitcode.com/cann/community/blob/master/CANN/sigs/intelligent-transportation-system/README.md)
+- 邮件列表：intelligent-transportation-system@cann.osinfra.cn
 
 ---
 
 ## 问题反馈
 
-如遇到问题、发现 bug 或有功能建议，欢迎通过以下方式反馈：
-zzhou602@seu.edu.cn
+- 功能问题、缺陷与需求：请在本仓库提交 [Issue](https://gitcode.com/cann/its-trip/issues)
+- 安全漏洞：请勿公开披露细节，按 [SECURITY.md](SECURITY.md) 中的私密渠道报告
+- 贡献代码：请先阅读 [CONTRIBUTING.md](CONTRIBUTING.md)，再提交 Pull Request
+- 联系邮箱：zzhou602@seu.edu.cn
