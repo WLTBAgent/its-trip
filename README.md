@@ -8,9 +8,9 @@ INCLUDING BUT NOT LIMITED TO NON-INFRINGEMENT, MERCHANTABILITY, OR FITNESS FOR A
 See LICENSE in the root of the software repository for the full text of the License.
 -->
 
-# its-trip - 高速事故工单智能研判
+# its-trip - 智能渐进式交通推理大模型
 
-its-trip（TRIP，Traffic Incident Processing）是 [CANN 社区 Intelligent Transportation System SIG](https://gitcode.com/cann/community/blob/master/CANN/sigs/intelligent-transportation-system/README.md) 旗下的高速事故工单智能研判示例仓。用户可上传事故工单图片/PDF 或输入文本，系统通过多智能体编排依次完成 **事件理解 → 知识调取 → 风险研判 → 方案生成 → 决策下发**，输出结构化事故要素、风险等级、按部门分发的管控措施及可下载的 JSON 结果。
+its-trip（TRIP，Traffic Incident Processing）是 [CANN 社区 Intelligent Transportation System SIG](https://gitcode.com/cann/community/blob/master/CANN/sigs/intelligent-transportation-system/README.md) 旗下的针对交通垂域的大模型仓。旨在开源智能渐进式交通推理大模型的相关技术，包括信息密度量化，交通多模态对齐，基于部分可观测马尔可夫过程的物理语义双建模等技术。
 
 ---
 
